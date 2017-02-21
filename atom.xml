@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-21T03:44:31.000Z</updated>
+  <updated>2017-02-21T06:23:43.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,73 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多个电脑共同维护一个hexo的方法</title>
+    <link href="http://yoursite.com/2017/02/21/%E5%A4%9A%E4%B8%AA%E7%94%B5%E8%84%91%E5%85%B1%E5%90%8C%E7%BB%B4%E6%8A%A4%E4%B8%80%E4%B8%AAhexo%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2017/02/21/多个电脑共同维护一个hexo的方法/</id>
+    <published>2017-02-21T06:08:45.000Z</published>
+    <updated>2017-02-21T06:23:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>作者：CrazyMilk<br>  链接：<a href="https://www.zhihu.com/question/21193762/answer/79109280" target="_blank" rel="external">https://www.zhihu.com/question/21193762/answer/79109280</a><br>  来源：知乎<br>  著作权归作者所有，转载请联系作者获得授权。</p>
+</blockquote>
+<h2 id="一、关于搭建的流程"><a href="#一、关于搭建的流程" class="headerlink" title="一、关于搭建的流程"></a>一、关于搭建的流程</h2><ol>
+<li>创建仓库，<a href="http://CrazyMilk.github.io；" target="_blank" rel="external">http://CrazyMilk.github.io；</a></li>
+<li>创建两个分支：master 与 hexo；</li>
+<li>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；</li>
+<li>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库；</li>
+<li>在本地<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="external">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</li>
+<li>修改_config.yml中的deploy参数，分支应为master；</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；</li>
+<li>执行hexo g -d生成网站并部署到GitHub上。</li>
+</ol>
+<p>这样一来，在GitHub上的<a href="http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(" target="_blank" rel="external">http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(</a> •̀ ω •́ )y！</p>
+<h2 id="二、关于日常的改动流程"><a href="#二、关于日常的改动流程" class="headerlink" title="二、关于日常的改动流程"></a>二、关于日常的改动流程</h2><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
+<ol>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>然后才执行hexo g -d发布网站到master分支上。</li>
+</ol>
+<p>虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。</p>
+<h2 id="三、本地资料丢失后的流程"><a href="#三、本地资料丢失后的流程" class="headerlink" title="三、本地资料丢失后的流程"></a>三、本地资料丢失后的流程</h2><p>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
+<ol>
+<li>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；</li>
+<li>在本地新拷贝的<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="external">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;作者：CrazyMilk&lt;br&gt;  链接：&lt;a href=&quot;https://www.zhihu.com/question/21193762/answer/79109280&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https:
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git打Tag的命令</title>
+    <link href="http://yoursite.com/2017/02/21/Git%E6%89%93Tag%E7%9A%84%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2017/02/21/Git打Tag的命令/</id>
+    <published>2017-02-21T05:55:46.000Z</published>
+    <updated>2017-02-21T06:22:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.打开Git命令行；<br>2.切换到你要打tag的分支上去，并输入如下示例语句：git tag -a V0.5 -m”描述信息：V0.5版本”；<br>3.输入命令行：git push origin V0.5 ，此处的”V0.5”与上面语句中的”V0.5”要一致，否则是无效的；<br>4.打开gitlab查看tag信息，点开就能看到你打的tag信息了！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.打开Git命令行；&lt;br&gt;2.切换到你要打tag的分支上去，并输入如下示例语句：git tag -a V0.5 -m”描述信息：V0.5版本”；&lt;br&gt;3.输入命令行：git push origin V0.5 ，此处的”V0.5”与上面语句中的”V0.5”要一致，否则是
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
