@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-21T06:32:28.000Z</updated>
+  <updated>2017-02-22T03:06:19.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Flask－Mail发送qq邮件</title>
+    <link href="http://yoursite.com/2017/02/22/%E4%BD%BF%E7%94%A8Flask%EF%BC%8DMail%E5%8F%91%E9%80%81qq%E9%82%AE%E4%BB%B6/"/>
+    <id>http://yoursite.com/2017/02/22/使用Flask－Mail发送qq邮件/</id>
+    <published>2017-02-22T03:05:36.000Z</published>
+    <updated>2017-02-22T03:06:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://www.jianshu.com/p/32e2f82a63c3" target="_blank" rel="external">http://www.jianshu.com/p/32e2f82a63c3</a></p>
+<p>废话不多说，直接上代码：</p>
+<p>from flask import Flaskfrom</p>
+<p>flask_mail import Mail, Message</p>
+<p>app = Flask(<strong>name</strong>)</p>
+<p>app.config.update(   </p>
+<pre><code>  #EMAIL SETTINGS   
+
+ MAIL_SERVER=&apos;smtp.qq.com&apos;,   
+
+ MAIL_PORT=465,  
+
+ MAIL_USE_SSL=True,  
+
+MAIL_USERNAME = &apos;qq号(如：123456)&apos;,  
+
+ MAIL_PASSWORD = &apos;qq邮箱授权码&apos;    )
+</code></pre><p>mail = Mail(app)</p>
+<p>@app.route(“/“)</p>
+<p>def index():   </p>
+<pre><code>msg = Message(subject=&quot;helloworld&quot;, sender=&apos;发送邮箱地址(如：123456@qq.com)&apos;, recipients=[&apos;接受邮箱地址(如：654321@qq.com)&apos;])    
+
+msg.html = &quot;testinghtml&quot;   
+
+mail.send(msg)   
+</code></pre><p>if<strong>name</strong> ==’<strong>main</strong>‘:</p>
+<pre><code>app.run(debug=True)
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/32e2f82a63c3&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.jianshu.com/p/32e2f82a63c3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;废话不多说，直接上
+    
+    </summary>
+    
+    
+      <category term="flask" scheme="http://yoursite.com/tags/flask/"/>
+    
+  </entry>
   
   <entry>
     <title>多个电脑共同维护一个hexo的方法</title>
